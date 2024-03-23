@@ -41,6 +41,8 @@ public class ErpContasPagar {
     private char transferido_tesouraria;
 
 
+
+
     public int getId() {
         return id;
     }
@@ -143,6 +145,13 @@ public class ErpContasPagar {
 
     public void setErp_pessoa_fornecedor_id(ErpPessoaFornecedor erp_pessoa_fornecedor_id) {
         this.erp_pessoa_fornecedor_id = erp_pessoa_fornecedor_id;
+    }
+
+    public double calcularValor (double desconto,double juros) {
+        double valorcalculado = this.valor;
+        double valordescontado = valorcalculado - desconto;
+         double valoradionad = valorcalculado + juros;
+
     }
 
     public String getObservacao() {

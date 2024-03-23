@@ -18,6 +18,7 @@ public class ErpContasReceber {
     private char active;
     private LocalDateTime datetime;
     private char transferido_tesouraria;
+    private double calcularValor;
 
     public ErpContasReceber(int id, LocalDateTime data_emissao, LocalDateTime data_vencimento, LocalDateTime data_recebimento, double valor, String status_pagamento, String chave_nfe, Responsavel responsavel_id, ErpLctoHistorico erp_lcto_historico_id, ErpFormaPagamento erp_forma_pagamento_id, String conta_credito, String observacao, char active, LocalDateTime datetime, char transferido_tesouraria) {
         this.id = id;
@@ -108,6 +109,13 @@ public class ErpContasReceber {
 
     public void setErp_lcto_historico_id(ErpLctoHistorico erp_lcto_historico_id) {
         this.erp_lcto_historico_id = erp_lcto_historico_id;
+    }
+
+    public double calcularValor (double desconto,double juros) {
+        double valorcalculado = this.valor;
+        double valordescontado = valorcalculado - desconto;
+        double valoradionad = valorcalculado + juros;
+
     }
 
     public ErpFormaPagamento getErp_forma_pagamento_id() {
